@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+struct PhotoData: Codable {
+  let id: Int
+  let largeImageURL: String?
+  
+  enum CodingKeys: String, CodingKey {
+    case id
+    case largeImageURL
+  }
+}
