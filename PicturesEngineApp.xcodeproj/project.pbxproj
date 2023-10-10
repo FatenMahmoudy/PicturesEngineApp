@@ -11,9 +11,24 @@
 		27D75AAB2AD5593600EA52AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D75AAA2AD5593600EA52AA /* SceneDelegate.swift */; };
 		27D75AB22AD5593700EA52AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27D75AB12AD5593700EA52AA /* Assets.xcassets */; };
 		27D75AB52AD5593700EA52AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27D75AB32AD5593700EA52AA /* LaunchScreen.storyboard */; };
-		27D75AC02AD5593700EA52AA /* PicturesEngineAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D75ABF2AD5593700EA52AA /* PicturesEngineAppTests.swift */; };
 		27D75ACA2AD5593700EA52AA /* PicturesEngineAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D75AC92AD5593700EA52AA /* PicturesEngineAppUITests.swift */; };
 		27D75ACC2AD5593700EA52AA /* PicturesEngineAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D75ACB2AD5593700EA52AA /* PicturesEngineAppUITestsLaunchTests.swift */; };
+		27D75ADB2AD55C7400EA52AA /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D75ADA2AD55C7400EA52AA /* EndPointType.swift */; };
+		27D75ADD2AD55C7F00EA52AA /* AppAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D75ADC2AD55C7F00EA52AA /* AppAPI.swift */; };
+		27D75ADF2AD55E0400EA52AA /* PhotosNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D75ADE2AD55E0400EA52AA /* PhotosNetworkService.swift */; };
+		27D75AE12AD55FA700EA52AA /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D75AE02AD55FA700EA52AA /* SearchResponse.swift */; };
+		27D75AE32AD55FB700EA52AA /* PhotoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D75AE22AD55FB700EA52AA /* PhotoData.swift */; };
+		27D75AE62AD5640B00EA52AA /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D75AE52AD5640B00EA52AA /* APIError.swift */; };
+		27D75AE82AD56E7F00EA52AA /* PhotoNetworkLive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D75AE72AD56E7F00EA52AA /* PhotoNetworkLive.swift */; };
+		27D75AEA2AD56F5100EA52AA /* PhotoNetworkMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D75AE92AD56F5100EA52AA /* PhotoNetworkMock.swift */; };
+		27D75AEC2AD570A200EA52AA /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D75AEB2AD570A200EA52AA /* SearchViewController.swift */; };
+		27D75AEE2AD5723900EA52AA /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27D75AED2AD5723900EA52AA /* Color.xcassets */; };
+		27D75AF12AD5725800EA52AA /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D75AF02AD5725800EA52AA /* UIColor+Extension.swift */; };
+		27D75AF42AD5736600EA52AA /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D75AF32AD5736600EA52AA /* SearchViewModel.swift */; };
+		27D75AF72AD577A700EA52AA /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D75AF62AD577A700EA52AA /* SearchCollectionViewCell.swift */; };
+		27D75AFA2AD5783000EA52AA /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 27D75AF92AD5783000EA52AA /* Kingfisher */; };
+		27D75AFC2AD5787B00EA52AA /* SearchCollectionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D75AFB2AD5787B00EA52AA /* SearchCollectionCellViewModel.swift */; };
+		27D75AFF2AD57F9700EA52AA /* NetworkingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D75AFE2AD57F9700EA52AA /* NetworkingServiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,10 +56,25 @@
 		27D75AB42AD5593700EA52AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		27D75AB62AD5593700EA52AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27D75ABB2AD5593700EA52AA /* PicturesEngineAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PicturesEngineAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		27D75ABF2AD5593700EA52AA /* PicturesEngineAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesEngineAppTests.swift; sourceTree = "<group>"; };
 		27D75AC52AD5593700EA52AA /* PicturesEngineAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PicturesEngineAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27D75AC92AD5593700EA52AA /* PicturesEngineAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesEngineAppUITests.swift; sourceTree = "<group>"; };
 		27D75ACB2AD5593700EA52AA /* PicturesEngineAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesEngineAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		27D75ADA2AD55C7400EA52AA /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		27D75ADC2AD55C7F00EA52AA /* AppAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAPI.swift; sourceTree = "<group>"; };
+		27D75ADE2AD55E0400EA52AA /* PhotosNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosNetworkService.swift; sourceTree = "<group>"; };
+		27D75AE02AD55FA700EA52AA /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
+		27D75AE22AD55FB700EA52AA /* PhotoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoData.swift; sourceTree = "<group>"; };
+		27D75AE52AD5640B00EA52AA /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		27D75AE72AD56E7F00EA52AA /* PhotoNetworkLive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoNetworkLive.swift; sourceTree = "<group>"; };
+		27D75AE92AD56F5100EA52AA /* PhotoNetworkMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoNetworkMock.swift; sourceTree = "<group>"; };
+		27D75AEB2AD570A200EA52AA /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		27D75AED2AD5723900EA52AA /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		27D75AF02AD5725800EA52AA /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		27D75AF32AD5736600EA52AA /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		27D75AF62AD577A700EA52AA /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		27D75AFB2AD5787B00EA52AA /* SearchCollectionCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionCellViewModel.swift; sourceTree = "<group>"; };
+		27D75AFD2AD57F9700EA52AA /* PicturesEngineAppTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PicturesEngineAppTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		27D75AFE2AD57F9700EA52AA /* NetworkingServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27D75AFA2AD5783000EA52AA /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,9 +126,14 @@
 		27D75AA72AD5593600EA52AA /* PicturesEngineApp */ = {
 			isa = PBXGroup;
 			children = (
+				27D75AF52AD5777C00EA52AA /* SearchView */,
+				27D75AEF2AD5725800EA52AA /* Helpers */,
+				27D75AD92AD55BCA00EA52AA /* Models */,
+				27D75AD82AD55BBD00EA52AA /* Services */,
 				27D75AA82AD5593600EA52AA /* AppDelegate.swift */,
 				27D75AAA2AD5593600EA52AA /* SceneDelegate.swift */,
 				27D75AB12AD5593700EA52AA /* Assets.xcassets */,
+				27D75AED2AD5723900EA52AA /* Color.xcassets */,
 				27D75AB32AD5593700EA52AA /* LaunchScreen.storyboard */,
 				27D75AB62AD5593700EA52AA /* Info.plist */,
 			);
@@ -107,7 +143,8 @@
 		27D75ABE2AD5593700EA52AA /* PicturesEngineAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				27D75ABF2AD5593700EA52AA /* PicturesEngineAppTests.swift */,
+				27D75AFE2AD57F9700EA52AA /* NetworkingServiceTests.swift */,
+				27D75AFD2AD57F9700EA52AA /* PicturesEngineAppTests-Bridging-Header.h */,
 			);
 			path = PicturesEngineAppTests;
 			sourceTree = "<group>";
@@ -119,6 +156,47 @@
 				27D75ACB2AD5593700EA52AA /* PicturesEngineAppUITestsLaunchTests.swift */,
 			);
 			path = PicturesEngineAppUITests;
+			sourceTree = "<group>";
+		};
+		27D75AD82AD55BBD00EA52AA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				27D75ADA2AD55C7400EA52AA /* EndPointType.swift */,
+				27D75ADC2AD55C7F00EA52AA /* AppAPI.swift */,
+				27D75ADE2AD55E0400EA52AA /* PhotosNetworkService.swift */,
+				27D75AE72AD56E7F00EA52AA /* PhotoNetworkLive.swift */,
+				27D75AE92AD56F5100EA52AA /* PhotoNetworkMock.swift */,
+				27D75AE52AD5640B00EA52AA /* APIError.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		27D75AD92AD55BCA00EA52AA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				27D75AE02AD55FA700EA52AA /* SearchResponse.swift */,
+				27D75AE22AD55FB700EA52AA /* PhotoData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		27D75AEF2AD5725800EA52AA /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				27D75AF02AD5725800EA52AA /* UIColor+Extension.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		27D75AF52AD5777C00EA52AA /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				27D75AEB2AD570A200EA52AA /* SearchViewController.swift */,
+				27D75AF32AD5736600EA52AA /* SearchViewModel.swift */,
+				27D75AF62AD577A700EA52AA /* SearchCollectionViewCell.swift */,
+				27D75AFB2AD5787B00EA52AA /* SearchCollectionCellViewModel.swift */,
+			);
+			path = SearchView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +215,9 @@
 			dependencies = (
 			);
 			name = PicturesEngineApp;
+			packageProductDependencies = (
+				27D75AF92AD5783000EA52AA /* Kingfisher */,
+			);
 			productName = PicturesEngineApp;
 			productReference = 27D75AA52AD5593600EA52AA /* PicturesEngineApp.app */;
 			productType = "com.apple.product-type.application";
@@ -192,6 +273,7 @@
 					};
 					27D75ABA2AD5593700EA52AA = {
 						CreatedOnToolsVersion = 14.3.1;
+						LastSwiftMigration = 1430;
 						TestTargetID = 27D75AA42AD5593600EA52AA;
 					};
 					27D75AC42AD5593700EA52AA = {
@@ -209,6 +291,9 @@
 				Base,
 			);
 			mainGroup = 27D75A9C2AD5593600EA52AA;
+			packageReferences = (
+				27D75AF82AD5783000EA52AA /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 27D75AA62AD5593600EA52AA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -227,6 +312,7 @@
 			files = (
 				27D75AB52AD5593700EA52AA /* LaunchScreen.storyboard in Resources */,
 				27D75AB22AD5593700EA52AA /* Assets.xcassets in Resources */,
+				27D75AEE2AD5723900EA52AA /* Color.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,8 +337,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27D75AE62AD5640B00EA52AA /* APIError.swift in Sources */,
+				27D75AEC2AD570A200EA52AA /* SearchViewController.swift in Sources */,
+				27D75ADF2AD55E0400EA52AA /* PhotosNetworkService.swift in Sources */,
+				27D75AF12AD5725800EA52AA /* UIColor+Extension.swift in Sources */,
 				27D75AA92AD5593600EA52AA /* AppDelegate.swift in Sources */,
+				27D75AF42AD5736600EA52AA /* SearchViewModel.swift in Sources */,
+				27D75AE12AD55FA700EA52AA /* SearchResponse.swift in Sources */,
+				27D75AFC2AD5787B00EA52AA /* SearchCollectionCellViewModel.swift in Sources */,
+				27D75AE32AD55FB700EA52AA /* PhotoData.swift in Sources */,
+				27D75AEA2AD56F5100EA52AA /* PhotoNetworkMock.swift in Sources */,
 				27D75AAB2AD5593600EA52AA /* SceneDelegate.swift in Sources */,
+				27D75AE82AD56E7F00EA52AA /* PhotoNetworkLive.swift in Sources */,
+				27D75ADD2AD55C7F00EA52AA /* AppAPI.swift in Sources */,
+				27D75AF72AD577A700EA52AA /* SearchCollectionViewCell.swift in Sources */,
+				27D75ADB2AD55C7400EA52AA /* EndPointType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,7 +359,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27D75AC02AD5593700EA52AA /* PicturesEngineAppTests.swift in Sources */,
+				27D75AFF2AD57F9700EA52AA /* NetworkingServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,7 +449,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -404,7 +503,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -471,14 +570,17 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.fm.PicturesEngineAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "PicturesEngineAppTests/PicturesEngineAppTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PicturesEngineApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PicturesEngineApp";
@@ -490,14 +592,16 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.fm.PicturesEngineAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "PicturesEngineAppTests/PicturesEngineAppTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PicturesEngineApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PicturesEngineApp";
@@ -578,6 +682,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		27D75AF82AD5783000EA52AA /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		27D75AF92AD5783000EA52AA /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 27D75AF82AD5783000EA52AA /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 27D75A9D2AD5593600EA52AA /* Project object */;
 }
