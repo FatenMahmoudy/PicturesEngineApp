@@ -10,6 +10,5 @@ import Foundation
 enum APIError: Error {
     case technical
     case noData
-    case requestError
     case parsingFailed
 }

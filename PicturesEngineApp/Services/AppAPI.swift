@@ -8,7 +8,7 @@
 import Foundation
 
 public enum AppAPI {
-  case getPhotos(searchQuery: String)
+  case getPhotos(searchQuery: String, page: Int)
 }
 
 extension AppAPI: EndpointType {
@@ -18,23 +18,18 @@ extension AppAPI: EndpointType {
   }
   
   var baseURL: URL? {
-    return URL.init(string: "https://pixabay.com/api")
+    return URL.init(string: "https://pixabay.com/api/")
   }
-  //"https://pixabay.com/api/?key={ KEY }&q=yellow+flowers&image_type=photo"
-  
-  var path: String {
-    switch self {
-    case .getPhotos:
-      return "weather"
-    }
-  }
-  
+//https://pixabay.com/api/?key={ KEY }&q=yellow+flowers&image_type=photo
   var queryItems: [URLQueryItem] {
     switch self {
-    case let .getPhotos(searchQuery):
+    case let .getPhotos(searchQuery, page):
       return [
-        URLQueryItem(name: "q", value: searchQuery + "&image_type=photo"),
-        URLQueryItem(name: "key", value: apiKey)
+        URLQueryItem(name: "key", value: apiKey),
+        URLQueryItem(name: "q", value: searchQuery),
+        URLQueryItem(name: "image_type", value: "photo"),
+        URLQueryItem(name: "page", value: String(page)),
+        URLQueryItem(name: "per_page", value: "15"),
       ]
     }
   }
