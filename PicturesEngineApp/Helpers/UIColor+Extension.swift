@@ -12,4 +12,8 @@ extension UIColor {
   static let backgroundColor: UIColor = {
     return UIColor(named: "backgroundColor") ?? .clear
   }()
+  
+  static let buttonColor: UIColor = {
+    return UIColor(named: "buttonColor") ?? .clear
+  }()
 }

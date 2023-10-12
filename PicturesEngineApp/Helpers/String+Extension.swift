@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+extension String {
+  func getImageURLfromString() -> URL? {
+    return URL(string: self)
+  }
+}

@@ -29,6 +29,10 @@
 		27D75AFA2AD5783000EA52AA /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 27D75AF92AD5783000EA52AA /* Kingfisher */; };
 		27D75AFC2AD5787B00EA52AA /* SearchCollectionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D75AFB2AD5787B00EA52AA /* SearchCollectionCellViewModel.swift */; };
 		27D75AFF2AD57F9700EA52AA /* NetworkingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D75AFE2AD57F9700EA52AA /* NetworkingServiceTests.swift */; };
+		27D75B022AD6A70600EA52AA /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D75B012AD6A70600EA52AA /* DetailsViewController.swift */; };
+		27D75B042AD6A71A00EA52AA /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D75B032AD6A71A00EA52AA /* DetailsViewModel.swift */; };
+		27D75B062AD7243700EA52AA /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D75B052AD7243700EA52AA /* String+Extension.swift */; };
+		27D75B082AD758D500EA52AA /* DetailsViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D75B072AD758D500EA52AA /* DetailsViewProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +79,10 @@
 		27D75AFB2AD5787B00EA52AA /* SearchCollectionCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionCellViewModel.swift; sourceTree = "<group>"; };
 		27D75AFD2AD57F9700EA52AA /* PicturesEngineAppTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PicturesEngineAppTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		27D75AFE2AD57F9700EA52AA /* NetworkingServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingServiceTests.swift; sourceTree = "<group>"; };
+		27D75B012AD6A70600EA52AA /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		27D75B032AD6A71A00EA52AA /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
+		27D75B052AD7243700EA52AA /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		27D75B072AD758D500EA52AA /* DetailsViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +134,7 @@
 		27D75AA72AD5593600EA52AA /* PicturesEngineApp */ = {
 			isa = PBXGroup;
 			children = (
+				27D75B002AD6A40A00EA52AA /* DetailsView */,
 				27D75AF52AD5777C00EA52AA /* SearchView */,
 				27D75AEF2AD5725800EA52AA /* Helpers */,
 				27D75AD92AD55BCA00EA52AA /* Models */,
@@ -184,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				27D75AF02AD5725800EA52AA /* UIColor+Extension.swift */,
+				27D75B052AD7243700EA52AA /* String+Extension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -197,6 +207,16 @@
 				27D75AFB2AD5787B00EA52AA /* SearchCollectionCellViewModel.swift */,
 			);
 			path = SearchView;
+			sourceTree = "<group>";
+		};
+		27D75B002AD6A40A00EA52AA /* DetailsView */ = {
+			isa = PBXGroup;
+			children = (
+				27D75B012AD6A70600EA52AA /* DetailsViewController.swift */,
+				27D75B032AD6A71A00EA52AA /* DetailsViewModel.swift */,
+				27D75B072AD758D500EA52AA /* DetailsViewProvider.swift */,
+			);
+			path = DetailsView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,8 +367,12 @@
 				27D75AFC2AD5787B00EA52AA /* SearchCollectionCellViewModel.swift in Sources */,
 				27D75AE32AD55FB700EA52AA /* PhotoData.swift in Sources */,
 				27D75AEA2AD56F5100EA52AA /* PhotoNetworkMock.swift in Sources */,
+				27D75B062AD7243700EA52AA /* String+Extension.swift in Sources */,
 				27D75AAB2AD5593600EA52AA /* SceneDelegate.swift in Sources */,
+				27D75B042AD6A71A00EA52AA /* DetailsViewModel.swift in Sources */,
+				27D75B022AD6A70600EA52AA /* DetailsViewController.swift in Sources */,
 				27D75AE82AD56E7F00EA52AA /* PhotoNetworkLive.swift in Sources */,
+				27D75B082AD758D500EA52AA /* DetailsViewProvider.swift in Sources */,
 				27D75ADD2AD55C7F00EA52AA /* AppAPI.swift in Sources */,
 				27D75AF72AD577A700EA52AA /* SearchCollectionViewCell.swift in Sources */,
 				27D75ADB2AD55C7400EA52AA /* EndPointType.swift in Sources */,

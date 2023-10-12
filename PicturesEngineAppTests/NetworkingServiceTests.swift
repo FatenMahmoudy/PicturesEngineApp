@@ -47,7 +47,8 @@ final class NetworkingServiceTests: XCTestCase {
       expectation.fulfill()
     }
     
-    await waitForExpectations(timeout: 5)
+//    await waitForExpectations(timeout: 5)
+    await fulfillment(of: [expectation])
     
     if let error = thrownError {
       XCTFail(
