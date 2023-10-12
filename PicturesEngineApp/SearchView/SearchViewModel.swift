@@ -12,7 +12,7 @@ final class SearchViewModel {
   private let networkService: PhotosNetworkService
   private var page: Int = 1
   private var currentSearchQuery: String?
-  private var selectedPhotos: [PhotoData] = []
+  private(set) var selectedPhotos: [PhotoData] = []
   
   @Published private(set) var photosVM : [SearchCollectionCellViewModel] = []
   @Published private(set) var isValidateButtonEnabled: Bool = false
@@ -42,6 +42,12 @@ final class SearchViewModel {
     guard let currentSearchQuery else { return }
     self.page += 1
     try await getPhotosSearch(query: currentSearchQuery)
+  }
+  
+  func removeLastSearchList() {
+    photosVM.removeAll()
+    selectedPhotos.removeAll()
+    isValidateButtonEnabled = false
   }
   
   func updateSelectedPhotos(photo: PhotoData) {

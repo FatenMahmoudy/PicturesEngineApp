@@ -11,6 +11,8 @@ import Combine
 
 final class SearchViewController: UIViewController {
   
+  // MARK: - Properties
+  
   private let viewModel: SearchViewModel
   private var cancellables: Set<AnyCancellable> = []
   
@@ -32,14 +34,17 @@ final class SearchViewController: UIViewController {
     return collectionView
   }()
   
-  private var button: UIButton = {
+  private let button: UIButton = {
     let btn = UIButton()
     btn.isHidden = true
     btn.setTitle("Valider", for: .normal)
-    btn.backgroundColor = .blue
+    btn.backgroundColor = .buttonColor
+    btn.layer.cornerRadius = 20
     btn.translatesAutoresizingMaskIntoConstraints = false
     return btn
   }()
+  
+  // MARK: - Init
   
   init(viewModel: SearchViewModel) {
     self.viewModel = viewModel
@@ -50,17 +55,21 @@ final class SearchViewController: UIViewController {
     fatalError("init(coder:) has not been implemented")
   }
   
+  // MARK: - Life cycle
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.setup()
+    setup()
   }
+  
+  // MARK: - Private
   
   private func bindViewModel() {
     self.viewModel.$photosVM
       .receive(on: DispatchQueue.main)
       .sink { [weak self] _ in
         guard let self else { return }
-        self.updateSnapshot()
+        updateSnapshot()
       }
       .store(in: &self.cancellables)
     
@@ -74,60 +83,75 @@ final class SearchViewController: UIViewController {
   }
   
   private func setup() {
-    self.view.backgroundColor = .backgroundColor
-    self.setupSearchNavigationBar()
-    self.setupCollectionView()
-    self.setupLayout()
-    self.bindViewModel()
+    view.backgroundColor = .backgroundColor
+    setupSearchNavigationBar()
+    setupViews()
+    setupLayout()
+    bindViewModel()
   }
   
   private func setupSearchNavigationBar() {
-    self.searchController = UISearchController()
-    self.searchController?.hidesNavigationBarDuringPresentation = false
-    self.searchController?.obscuresBackgroundDuringPresentation = false
-    self.searchController?.searchBar.placeholder = "Chercher une image"
-    self.searchController?.searchBar.accessibilityIdentifier = "SearchBar"
+    searchController = UISearchController()
+    searchController?.hidesNavigationBarDuringPresentation = false
+    searchController?.obscuresBackgroundDuringPresentation = false
+    searchController?.searchBar.placeholder = "Chercher une image"
+    searchController?.searchBar.accessibilityIdentifier = "SearchBar"
     
-    self.searchController?.searchBar.delegate = self
+    searchController?.searchBar.delegate = self
     self.definesPresentationContext = true
-    self.navigationItem.searchController = self.searchController
+    navigationItem.searchController = searchController
+    
+    navigationController?.navigationBar.prefersLargeTitles = true
+    navigationController?.navigationBar.tintColor = .darkText
+    navigationItem.title = "Search"
   }
   
-  private func setupCollectionView() {
-    self.view.addSubview(self.collectionView)
-    self.view.addSubview(self.button)
-    self.collectionView.delegate = self
-    self.collectionView.dataSource = self.dataSource
+  private func setupViews() {
+    view.addSubview(collectionView)
+    collectionView.delegate = self
+    collectionView.dataSource = self.dataSource
+    
+    view.addSubview(button)
+    button.addTarget(self, action: #selector(didTapOnValidateButton), for: .touchUpInside)
   }
   
   private func setupLayout() {
     NSLayoutConstraint.activate([
-      self.collectionView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
-      self.collectionView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
-      self.collectionView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor),
-      self.collectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+      collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+      collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+      collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+      collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
     ])
     
     NSLayoutConstraint.activate([
-      self.button.heightAnchor.constraint(equalToConstant: 40),
-      self.button.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
-      self.button.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
-      self.button.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
+      button.heightAnchor.constraint(equalToConstant: 40),
+      button.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
+      button.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+      button.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
     ])
+  }
+  
+  @objc
+  func didTapOnValidateButton() {
+    navigationController?.pushViewController(DeatilsViewController(viewModel: DetailsViewModel(photos: viewModel.selectedPhotos)), animated: true)
   }
 }
 
 extension SearchViewController: UISearchBarDelegate {
   func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-    if let searchText = searchController?.searchBar.text {
+    if let searchText = searchController?.searchBar.text, searchText != "" {
       Task {
-        try await self.viewModel.getPhotosSearch(query: searchText)
+        try await viewModel.getPhotosSearch(query: searchText)
       }
     }
   }
   
   func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-    self.searchController?.searchResultsController?.dismiss(animated: false)
+    viewModel.removeLastSearchList()
+  }
+  
+  func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+    viewModel.removeLastSearchList()
   }
 }
 
@@ -141,7 +165,7 @@ extension SearchViewController: UICollectionViewDelegate {
   private func makeDataSource() -> DataSource {
     
     return DataSource(
-      collectionView: self.collectionView,
+      collectionView: collectionView,
       cellProvider: { collectionView, indexPath, searchCollectionCellViewModel in
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchCollectionViewCell.reuseIdentifier, for: indexPath) as? SearchCollectionViewCell else {
           assertionFailure("Failed to dequeue \(SearchCollectionViewCell.self)")
@@ -156,16 +180,15 @@ extension SearchViewController: UICollectionViewDelegate {
   private func updateSnapshot(animate: Bool = false) {
     var snapshot = NSDiffableDataSourceSnapshot<Section, SearchCollectionCellViewModel>()
     snapshot.appendSections([.main])
-    snapshot.appendItems(self.viewModel.photosVM, toSection: .main)
+    snapshot.appendItems(viewModel.photosVM, toSection: .main)
     self.dataSource.apply(snapshot, animatingDifferences: animate)
   }
   
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
     if (scrollView.contentOffset.y >= (scrollView.contentSize.height - scrollView.frame.size.height)) {
       Task {
-        try await self.viewModel.getNextPhotosSearch()
+        try await viewModel.getNextPhotosSearch()
       }
-      
     }
   }
   
