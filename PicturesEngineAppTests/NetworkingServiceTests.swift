@@ -39,7 +39,7 @@ final class NetworkingServiceTests: XCTestCase {
     
     Task {
       do {
-        searchResponse = try await networking.getPhotos(from: "yellow flower", page: 1)
+        searchResponse = try await networking.getPhotos(from: "yellow flower", page: 1, perPage: 15)
       } catch {
         errorHandler(error)
       }
