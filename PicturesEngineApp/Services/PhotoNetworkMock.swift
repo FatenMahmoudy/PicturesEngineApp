@@ -11,7 +11,7 @@ class PhotosNetworkMock: PhotosNetworkService {
   
   init() {}
   
-  func getPhotos(from query: String, page: Int) async throws -> SearchResponse {
+  func getPhotos(from query: String, page: Int, perPage: Int) async throws -> SearchResponse {
     
     return SearchResponse(
       total: 200,

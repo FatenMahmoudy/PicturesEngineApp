@@ -11,8 +11,8 @@ class PhotosNetworkLive: PhotosNetworkService {
   
   init() {}
   
-  func getPhotos(from query: String, page: Int) async throws -> SearchResponse {
-    let endPoint = AppAPI.getPhotos(searchQuery: query, page: page)
+  func getPhotos(from query: String, page: Int, perPage: Int) async throws -> SearchResponse {
+    let endPoint = AppAPI.getPhotos(searchQuery: query, page: page, perPage: perPage)
     
     guard let baseURL = endPoint.baseURL else {
       throw APIError.technical

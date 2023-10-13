@@ -9,9 +9,10 @@ import Foundation
 
 final class SearchViewModel {
   
+  private let perPage: Int = 15
   private let networkService: PhotosNetworkService
-  private var page: Int = 1
-  private var currentSearchQuery: String?
+  private var currentPage: Int = 1
+  private var currentSearchQuery: CurrentSearch?
   private(set) var selectedPhotos: [PhotoData] = []
   
   @Published private(set) var photosVM : [SearchCollectionCellViewModel] = []
@@ -22,11 +23,11 @@ final class SearchViewModel {
   }
   
   func getPhotosSearch(query: String) async throws {
-    currentSearchQuery = query
+    
     do {
-      let result = try await networkService.getPhotos(from: query, page: page)
+      let result = try await networkService.getPhotos(from: query, page: currentPage, perPage: perPage)
       guard let photos = result.photos else { throw APIError.noData }
-      
+      currentSearchQuery = CurrentSearch(query: query, total: result.total)
       let photosVM = photos.compactMap({
         SearchCollectionCellViewModel(photo: $0)
       })
@@ -39,12 +40,13 @@ final class SearchViewModel {
   }
   
   func getNextPhotosSearch() async throws {
-    guard let currentSearchQuery else { return }
-    self.page += 1
-    try await getPhotosSearch(query: currentSearchQuery)
+    guard let currentSearchQuery, currentPage < currentSearchQuery.total / perPage else { return }
+    currentPage += 1
+    try await getPhotosSearch(query: currentSearchQuery.query)
   }
   
   func removeLastSearchList() {
+    currentSearchQuery = nil
     photosVM.removeAll()
     selectedPhotos.removeAll()
     isValidateButtonEnabled = false
@@ -58,7 +60,14 @@ final class SearchViewModel {
     } else {
       selectedPhotos.append(photo)
     }
-   
+    
     isValidateButtonEnabled = selectedPhotos.count >= 2
+  }
+}
+
+extension SearchViewModel {
+  struct CurrentSearch {
+    let query: String
+    let total: Int
   }
 }

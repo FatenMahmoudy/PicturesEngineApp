@@ -8,5 +8,5 @@
 import Foundation
 
 protocol PhotosNetworkService {
-  func getPhotos(from query: String, page: Int) async throws -> SearchResponse
+  func getPhotos(from query: String, page: Int, perPage: Int) async throws -> SearchResponse
 }
